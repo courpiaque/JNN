@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns ="http://xamarin.com/schemas/2014/forms"
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     x:Class="JNN.RulesPage">
+    <AbsoluteLayout>
+        <Image
+            Aspect="AspectFill"
+            Source="zasady.png"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"/>
+        <Grid
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Column="1" Grid.Row="0">
+                <Image Source="rules.png" Aspect="AspectFit" Margin="0,20,0,0"/>
+            </StackLayout>
+            <StackLayout
+                Grid.Column="1"
+                Grid.Row="1"
+                Orientation="Horizontal"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <Button
+                    Clicked="PlayBtnClicked"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                    CornerRadius="10"
+                    BorderColor="#add8e6"
+                    BorderWidth="2"
+                    Margin="20"
+                    TextColor="#626262"
+                    FontSize="Large"
+                    Text="Zaczynamy!"
+                    BackgroundColor="#b3A3D9EA"/>
+            </StackLayout>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns      ="http://xamarin.com/schemas/2014/forms"
+     xmlns:x     ="http://schemas.microsoft.com/winfx/2009/xaml"
+     xmlns:d     ="http://xamarin.com/schemas/2014/forms/design"
+     xmlns:mc    ="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     mc:Ignorable="d" x:Class     ="JNN.MainPage">
+    <AbsoluteLayout>
+        <Image
+            Aspect="AspectFill"
+            Source="tlo.png"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"/>
+        <Grid
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Column="1" Grid.Row="0">
+                <Image Source="title.png" Aspect="AspectFit" Margin="0,20,0,0"/>
+            </StackLayout>
+            <StackLayout
+                Grid.Column="1"
+                Grid.Row="1"
+                Orientation="Horizontal"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <Button
+                    Clicked="PlayBtnClicked"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                    CornerRadius="10"
+                    BorderColor="#add8e6"
+                    BorderWidth="2"
+                    Margin="20"
+                    Padding="10"
+                    WidthRequest="130"
+                    TextColor="#626262"
+                    FontSize="Large"
+                    Text="Graj"
+                    BackgroundColor="#b3A3D9EA"/>
+                <Button
+                    Clicked="RulesBtnClicked"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                    CornerRadius="10"
+                    BorderColor="#add8e6"
+                    BorderWidth="2"
+                    WidthRequest="130"
+                    FontSize="Large"
+                    Margin="20"
+                    Padding="10"
+                    TextColor="#626262"
+                    Text="Zasady"
+                    BackgroundColor="#b3A3D9EA"/>
+            </StackLayout>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>
