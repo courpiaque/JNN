@@ -29,17 +29,23 @@
                 Orientation="Horizontal"
                 VerticalOptions="Center"
                 HorizontalOptions="Center">
+                <Frame
+                    Padding="0"
+                    HasShadow="True"
+                    Margin="20"
+                    CornerRadius="10"
+                    BorderColor="#add8e6">
                 <Button
                     Clicked="PlayBtnClicked"
                     FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
                     CornerRadius="10"
                     BorderColor="#add8e6"
                     BorderWidth="2"
-                    Margin="20"
                     TextColor="#626262"
-                    FontSize="Large"
+                    FontSize="18"
                     Text="Zaczynamy!"
                     BackgroundColor="#b3A3D9EA"/>
+                </Frame>
             </StackLayout>
         </Grid>
     </AbsoluteLayout>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JNN.GamePage">
+    <AbsoluteLayout>
+        <Image
+            Aspect="AspectFill"
+            Source="tlo.png"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <Grid
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ElsewhereClicked" />
+            </Grid.GestureRecognizers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="10*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Frame Grid.Column="1"
+                   Grid.Row="1"
+                   BorderColor="#7A79A0"
+                   CornerRadius="15"
+                   Padding="0"
+                   BackgroundColor="#b8C0E1EC">
+                <Frame BorderColor="#7A79A0"
+                       Padding="0"
+                       Margin="3"
+                       CornerRadius="15"
+                       BackgroundColor="Transparent">
+                    <Frame BorderColor="#7A79A0"
+                           Padding="0"
+                           Margin="3"
+                           CornerRadius="15"
+                           BackgroundColor="Transparent">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="NextBtnClicked" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout HorizontalOptions="CenterAndExpand"
+                                     VerticalOptions="CenterAndExpand"
+                                     BackgroundColor="Transparent">
+                            <Label
+                                Text="Stuknij w ekran, aby rozpocząć"
+                                FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                                TextColor="#b3626262"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="30,0,30,0"
+                                x:Name="lbl"
+                                FontSize="Large" />
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+            </Frame>
+        </Grid>
+        <StackLayout
+            Grid.Column="0"
+            Grid.Row="0">
+            <Frame
+                x:Name="menuFrame"
+                CornerRadius="15"
+                HeightRequest="50"
+                HorizontalOptions="Start"
+                WidthRequest="50"
+                BorderColor="#7A79A0"
+                Margin="10"
+                Padding="0"
+                BackgroundColor="#C0E1EC">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SetBtnClicked" />
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Image
+                        x:Name="setImg"
+                        Source="set.png"
+                        Aspect="AspectFill"
+                        Margin="5,6,5,5" />
+                    <Button
+                        x:Name="restBtn"
+                        Clicked="AlertBtnClicked"
+                        FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                        CornerRadius="10"
+                        BorderColor="#33000000"
+                        BorderWidth="2"
+                        HeightRequest="30"
+                        TextColor="#626262"
+                        FontSize="12"
+                        Text="Restart"
+                        BackgroundColor="#b3A3D9EA"
+                        IsVisible="false"
+                        Padding="2"
+                        Margin="10,0,10,0" />
+                    <BoxView x:Name="box"
+                             BackgroundColor="#33eeeeee"
+                             HeightRequest="2"
+                             Margin="20,0,20,0"
+                             IsVisible="false" />
+                    <Button
+                        Padding="2"
+                        Margin="10,0,10,0"
+                        x:Name="BackBtn"
+                        FontSize="12"
+                        HeightRequest="30"
+                        Clicked="BackBtnClicked"
+                        FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                        CornerRadius="10"
+                        BorderColor="#33000000"
+                        BorderWidth="2"
+                        TextColor="#626262"
+                        Text="Wyjdź"
+                        BackgroundColor="#b3A3D9EA"
+                        IsVisible="false" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        <StackLayout
+            x:Name="mask"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#33000000"
+            IsVisible="false">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ElsewhereClicked" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+        <Frame AbsoluteLayout.LayoutBounds="0.5,0.5,300,150"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               x:Name="alert"
+               IsVisible="false"
+               BorderColor="#7A79A0"
+               CornerRadius="15"
+               Padding="0"
+               BackgroundColor="#C0E1EC">
+            <StackLayout Margin="20"
+                         VerticalOptions="Center">
+                <Label Text="CZY NA PEWNO CHCESZ ZRESTARTOWAĆ BAZĘ PYTAŃ I ZACZĄĆ OD NOWA?"
+                       HorizontalTextAlignment="Center"
+                       FontSize="14"
+                       FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                       VerticalOptions="CenterAndExpand"
+                       Margin="10,10,10,0" />
+                <Frame
+                    Padding="0"
+                    Margin="10"
+                    CornerRadius="10"
+                    HasShadow="True"
+                    BorderColor="#626262"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand">
+                    <Button Text="Tak"
+                            Clicked="RestartBtnClicked"
+                            FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"
+                            CornerRadius="10"
+                            FontSize="12"
+                            HeightRequest="30"
+                            Padding="0"
+                            TextColor="#626262"
+                            BackgroundColor="#b3A3D9EA" />
+                </Frame>
+
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>
